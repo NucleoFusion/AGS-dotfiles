@@ -109,6 +109,8 @@ window.Sidebar {
     background-color: rgb(30, 30, 46, 0.9);
     border-right: solid $teal 1px;
     border-radius: 7px;
+
+    padding: 20px;
   }
 }
 
@@ -129,12 +131,53 @@ window.Sidebar {
   border: solid $teal 1px;
 }
 
+//SIDEBAR MENU
+
+.menu_content {
+  margin-left: 15px;
+
+  .subheading {
+    font-size: 1.2em;
+  }
+
+  .subheading ~ * {
+    margin-left: 10px;
+  }
+}
+
+.header {
+  .heading {
+    font-size: 1.5em;
+  }
+
+  .material {
+    font-size: 2.5em;
+  }
+}
+
+//Notif
+
+window.notif {
+  padding: 5px;
+
+  .instance {
+    padding: 10px;
+
+    background-color: $base;
+
+    border: solid $teal 1px;
+    border-radius: 7px;
+  }
+}
+
+//MISC
+
 .workspaces label {
   color: $text;
 }
 
 .date {
-  font-size: 0.95em;
+  font-size: 1em;
 }
 
 .tray_button {

@@ -2,7 +2,7 @@ import { bind } from "astal";
 import { SidebarActive, SidebarMenu } from "./Active";
 import Notif from "./Items/Notif";
 import Wifi from "./Items/Wifi";
-import Bluetooth from "./Items/Bluetooth";
+import Bluetooth from "./Items/Bluetooth/Bluetooth";
 import Music from "./Items/Music";
 import Stats from "./Items/Stats";
 import Volume from "./Items/Volume";
