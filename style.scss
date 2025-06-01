@@ -1,0 +1,153 @@
+$rosewater: #f5e0dc;
+$flamingo: #f2cdcd;
+$pink: #f5c2e7;
+$mauve: #cba6f7;
+$red: #f38ba8;
+$maroon: #eba0ac;
+$peach: #fab387;
+$yellow: #f9e2af;
+$green: #a6e3a1;
+$teal: #94e2d5;
+$sky: #89dceb;
+$sapphire: #74c7ec;
+$blue: #89b4fa;
+$lavender: #b4befe;
+$text: #cdd6f4;
+$subtext1: #bac2de;
+$subtext0: #a6adc8;
+$overlay2: #9399b2;
+$overlay1: #7f849c;
+$overlay0: #6c7086;
+$surface2: #585b70;
+$surface1: #45475a;
+$surface0: #313244;
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+
+window,
+popover {
+  color: $text;
+  font-family: "JetBrains Mono";
+  font-size: 1.2em;
+}
+
+popover {
+  background-color: transparent;
+
+  padding: 0px;
+  margin: 0px;
+  border: none;
+
+  contents {
+    all: unset;
+
+    background-color: rgb(17, 17, 27);
+
+    color: $text;
+
+    margin: 0px;
+    padding: 3px 10px;
+
+    border-radius: 10px;
+  }
+}
+
+button {
+  background: transparent;
+  border: solid 1px transparent;
+
+  transition: all 0.3s ease;
+
+  padding: 0px 4px;
+}
+
+tooltip {
+  background-color: $crust;
+  color: $text;
+
+  font-size: 1em;
+}
+
+window.Bar {
+  background: transparent;
+  padding: 10px 0px;
+  margin-right: 5px;
+  margin-left: 0px;
+
+  min-height: 35px;
+}
+
+window.Sidebar {
+  background-color: rgb(30, 30, 46, 0.6);
+
+  border: solid $teal 1px;
+  border-radius: 7px;
+
+  margin: 0px 10px;
+
+  min-width: 500px;
+
+  button:hover {
+    border: solid $teal 1px;
+  }
+
+  .nav {
+    min-width: 30px;
+    padding: 5px;
+
+    button {
+      padding: 10px;
+    }
+
+    .active {
+      border: solid $teal 1px;
+    }
+  }
+
+  .content {
+    background-color: rgb(30, 30, 46, 0.9);
+    border-right: solid $teal 1px;
+    border-radius: 7px;
+  }
+}
+
+.bar_item {
+  padding: 10px 0px;
+
+  background-color: rgb(30, 30, 46, 0.6);
+
+  border-radius: 200px;
+  border: solid 1px transparent;
+
+  transition: all 0.3s ease;
+}
+
+.bar_item:hover {
+  background-color: $base;
+
+  border: solid $teal 1px;
+}
+
+.workspaces label {
+  color: $text;
+}
+
+.date {
+  font-size: 0.95em;
+}
+
+.tray_button {
+  padding: 0px 2px;
+  margin: 0px 5px;
+  border-radius: 7px;
+}
+
+.tray_button:hover {
+  border: solid transparent 1px;
+}
+
+.material {
+  font-family: "Material Icons";
+  font-size: 1.1em;
+}
