@@ -7,9 +7,9 @@ import Notif from "./widget/Notifd/Notif";
 App.start({
   css: style,
   main() {
-    const main = App.get_monitors()[0]
+    const main = App.get_monitors()[0];
     Bar(main);
-    Sidebar(main)
-    // Notif(main)
+    Sidebar(main);
+    Notif(main);
   },
 });

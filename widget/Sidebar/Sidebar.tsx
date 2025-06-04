@@ -1,6 +1,11 @@
-import { App, Astal, Gdk, Gtk } from "astal/gtk4";
+import { App, Astal, astalify, Gdk, Gtk } from "astal/gtk4";
 import Nav from "./Nav";
 import Content from "./Content";
+
+export const ScrolledWindow = astalify<
+  Gtk.ScrolledWindow,
+  Gtk.ScrolledWindow.ConstructorProps
+>(Gtk.ScrolledWindow, {});
 
 export default function (gdkmonitor: Gdk.Monitor) {
   const { TOP, BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -19,9 +24,10 @@ export default function (gdkmonitor: Gdk.Monitor) {
       marginRight={-5}
       marginTop={5}
       marginBottom={5}
+      default_width={400}
     >
-      <box vexpand>
-        <box cssClasses={["content"]} hexpand vexpand>
+      <box >
+        <box cssClasses={["content"]} hexpand >
           <Content />
         </box>
         <Nav />

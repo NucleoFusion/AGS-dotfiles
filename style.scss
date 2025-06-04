@@ -88,16 +88,16 @@ window.Sidebar {
 
   min-width: 500px;
 
-  button:hover {
-    border: solid $teal 1px;
-  }
-
   .nav {
     min-width: 30px;
     padding: 5px;
 
     button {
       padding: 10px;
+    }
+
+    button:hover {
+      border: solid $teal 1px;
     }
 
     .active {
@@ -112,12 +112,90 @@ window.Sidebar {
 
     padding: 20px;
   }
+
+  .notif-sidebar {
+    min-height: 400px;
+    // border: solid 1px red;
+  }
+
+  // switch {
+  //   image:first-child {
+  //     background-color: $teal;
+  //   }
+  //   slider {
+  //     background-color: $text;
+  //   }
+  // }
+}
+
+//BLUETOOTH
+
+.bt_menu {
+  button {
+    padding: 5px 7px;
+    // border: solid $surface2 1px;
+    background-color: rgb(49, 50, 68, 0.5);
+  }
+
+  button:hover {
+    border: solid $surface2 1px;
+  }
+
+  .subheading {
+    border-bottom: solid $surface2 1px;
+    padding-bottom: 5px;
+  }
+
+  .device {
+    // background-color: rgb(49, 50, 68, 0.4);
+    padding: 5px 7px;
+    border-radius: 7px;
+    border: solid $surface0 1px;
+
+    > label {
+      font-size: 1.05em;
+    }
+
+    revealer > * {
+      margin-top: 10px;
+      color: $overlay2;
+
+      button {
+        color: $text;
+      }
+    }
+  }
+}
+
+// MUSIC
+
+.music_box {
+  border-radius: 7px;
+  border: solid $teal 1px;
+
+  .music_overlay {
+    background-color: rgb(30, 30, 46, 0.7);
+
+    button {
+      padding: 5px 7px;
+      border: solid 1px transparent;
+    }
+
+    button:hover {
+      border: solid $surface2 1px;
+      background-color: rgb(30, 30, 46, 0.8);
+    }
+
+    .artist {
+      color: $overlay2;
+    }
+  }
 }
 
 .bar_item {
   padding: 10px 0px;
 
-  background-color: rgb(30, 30, 46, 0.6);
+  background-color: rgb(30, 30, 46, 0.8);
 
   border-radius: 200px;
   border: solid 1px transparent;
@@ -153,11 +231,14 @@ window.Sidebar {
   .material {
     font-size: 2.5em;
   }
+
+  padding-bottom: 10px;
+  border-bottom: solid $teal 1px;
 }
 
 //Notif
 
-window.notif {
+.notif {
   padding: 5px;
 
   .instance {
@@ -167,6 +248,17 @@ window.notif {
 
     border: solid $teal 1px;
     border-radius: 7px;
+
+    .body {
+      margin-right: 30px;
+      margin-left: 10px;
+      color: $subtext0;
+    }
+
+    .title {
+      font-size: 1em;
+      font-weight: bold;
+    }
   }
 }
 
