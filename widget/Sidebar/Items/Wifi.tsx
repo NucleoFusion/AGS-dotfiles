@@ -14,21 +14,27 @@ wifi.get()?.connect("state-changed", handleWifi)
 
 export default function Wifi() {
   return <box
+    vexpand
+    hexpand
+    valign={Gtk.Align.START}
     orientation={1}
+    spacing={30}
+    cssClasses={["wifi_menu"]}
   >
-    <box cssClasses={["header"]} >
-      <box>
+    <box cssClasses={["header"]} hexpand>
+      <box hexpand spacing={10}>
         <label cssClasses={["material"]} label="wifi" />
-        <label label="Wifi" />
+        <label cssClasses={["heading"]} label="Wifi" />
       </box>
-      <box vexpand={false} valign={Gtk.Align.CENTER}>
-        <switch />
+      <box
+        hexpand
+        vexpand={false}
+        valign={Gtk.Align.CENTER}
+        halign={Gtk.Align.END}
+      >
+        <switch active={true} /> {/*  TODO: */}
       </box>
     </box>
-    <box>
-      <label label={wifi().as(wifi => wifi ? wifi.get_ssid() : "Not Connected")} />
-      <label label={wifi().as(wifi => wifi ? wifi.get_strength().toString() : "Not Connected")} />
-    </box>
-  </box >
+  </box>
 }
 

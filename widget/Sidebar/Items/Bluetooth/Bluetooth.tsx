@@ -8,8 +8,6 @@ import Available from "./Available";
 export const bt = AstalBluetooth.get_default();
 export const adapter = bt.get_adapter();
 
-if (adapter) adapter.discoverableTimeout = 30
-
 const state = Variable(
   (adapter as AstalBluetooth.Adapter).get_powered(),
 ).observe(adapter as AstalBluetooth.Adapter, "notify::powered", () =>
@@ -21,6 +19,7 @@ state.subscribe(() => console.log("STATE CHANGED"));
 export const connected = Variable<AstalBluetooth.Device[]>([]);
 export const saved = Variable<AstalBluetooth.Device[]>([]);
 export const available = Variable<AstalBluetooth.Device[]>([]);
+export const searching = Variable(false).observe(adapter as AstalBluetooth.Adapter, "notify::discovering", () => (adapter as AstalBluetooth.Adapter).get_discovering())
 
 const setVars = () => {
   connected.set([

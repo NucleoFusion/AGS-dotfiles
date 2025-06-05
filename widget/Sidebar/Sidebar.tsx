@@ -21,7 +21,7 @@ export default function (gdkmonitor: Gdk.Monitor) {
       layer={Astal.Layer.OVERLAY}
       application={App}
       vexpand
-      marginRight={-5}
+      // marginRight={-5}
       marginTop={5}
       marginBottom={5}
       default_width={400}

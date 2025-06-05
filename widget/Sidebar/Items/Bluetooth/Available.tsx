@@ -1,6 +1,12 @@
-import { Gtk } from "astal/gtk4";
-import { adapter, available } from "./Bluetooth";
+import { astalify, Gtk } from "astal/gtk4";
+import { adapter, available, searching } from "./Bluetooth";
 import AstalBluetooth from "gi://AstalBluetooth";
+import { Variable } from "astal";
+
+export const Spinner = astalify<
+  Gtk.Spinner,
+  Gtk.Spinner.ConstructorProps
+>(Gtk.Spinner, {});
 
 export default function Available() {
   return (
@@ -14,19 +20,30 @@ export default function Available() {
           />
         </box>
         <box halign={Gtk.Align.END} hexpand>
-          <button label="Scan" onClicked={() => adapter?.start_discovery()} />
+          <button label="Scan" onClicked={() => {
+            adapter?.start_discovery()
+            setTimeout(() => adapter?.stop_discovery(), 10000)
+          }} />
         </box>
       </box>
-      {available().as((available) => {
-        if (available.length === 0) {
-          return (
-            <box hexpand halign={Gtk.Align.CENTER}>
-              <label label="No Available Devices" halign={Gtk.Align.CENTER} />
-            </box>
-          );
+      {searching().as((searching) => {
+        if (searching) {
+          return <Spinner cssClasses={["spinner"]} setup={(self) => self.start()} />
         }
 
-        return available.map((device) => AvailableDevice(device));
+        return <box>
+          {available().as(available => {
+            if (available.length === 0) {
+              return (
+                <box hexpand halign={Gtk.Align.CENTER}>
+                  <label label="No Available Devices" halign={Gtk.Align.CENTER} />
+                </box>
+              );
+            }
+
+            return available.map((device) => AvailableDevice(device));
+          })}
+        </box>
       })}
     </box>
   );
